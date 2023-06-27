@@ -30,7 +30,7 @@ func (c *categoryClient) CategoryList(token string) ([]*model.Category, error) {
 		return nil, err
 	}
 
-	req, err := http.NewRequest("GET", config.SetUrl("/api/v1/Category/list"), nil)
+	req, err := http.NewRequest("GET", config.SetUrl("/api/v1/category/list"), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -137,7 +137,7 @@ func (c *categoryClient) DeleteCategory(token, id string) (respCode int, err err
 		return -1, err
 	}
 
-	req, err := http.NewRequest("DELETE", config.SetUrl("/api/v1/Category/delete/"+id), nil)
+	req, err := http.NewRequest("DELETE", config.SetUrl("/api/v1/category/delete/"+id), nil)
 	if err != nil {
 		return -1, err
 	}
