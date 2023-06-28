@@ -197,7 +197,10 @@
   <script>
     const toggleButton = document.getElementById("user-menu-button");
     const userElement = document.getElementById("user-element");
-   
+    const addCategory = document.getElementById("add-category");
+
+    var menu = document.getElementById("mobile-menu");
+
     toggleButton.addEventListener("click", function() {
       const isVisible = userElement.style.display === "block";
         if (isVisible) {
@@ -205,6 +208,34 @@
         } else {
           userElement.style.display = "block";
         }
+    });
+
+    addCategory.addEventListener("click", function() {
+      var form = document.getElementById("form-add");
+
+      if (form.classList.contains("hidden")) {
+        form.classList.remove("hidden");
+      } else {
+        form.classList.add("hidden");
+      }
+    });
+
+    function toggleEdit(categoryID) {
+      var form = document.getElementById(`form-update-${categoryID}`);
+
+      if (form.classList.contains("hidden")) {
+        form.classList.remove("hidden");
+      } else {
+        form.classList.add("hidden");
+      }
+    };
+
+    document.getElementById("open").addEventListener("click", function() {
+      if (menu.classList.contains("hidden")) {
+        menu.classList.remove("hidden");
+      } else {
+        menu.classList.add("hidden");
+      }
     });
 </script>
 </body>
